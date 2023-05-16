@@ -1,3 +1,14 @@
+<?php
+#定数
+require_once '../include/config/const.php';
+#DB接続
+  require_once '../include/model/model.php';
+#汎用系関数
+  require_once '../include/model/common.php';
+#header関数
+  require_once '../include/template/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,6 +21,7 @@
 <body>
 
 <?php
+echo '<p>'.$_GET['error'].'</p>'
 
 
 ?>
