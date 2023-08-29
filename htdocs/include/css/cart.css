@@ -1,0 +1,40 @@
+.wrapper {
+  margin: 0 auto 1% auto;
+  max-width: 90%;
+  /* 完成したら解除 */
+  display: flex;
+  justify-content: space-between;
+  line-height: 150px;
+  border: 1px gray solid;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+/* 完成したら実装 */
+input {
+  margin: 10px;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.footer_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sum {
+  font-weight: bold;
+}

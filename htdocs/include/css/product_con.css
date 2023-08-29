@@ -1,0 +1,9 @@
+.product_info label {
+  width: 100px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.logout {
+  margin-top: 20px;
+}

@@ -1,14 +1,14 @@
-<?php 
- echo "common.php";
- print "<br>";
+<?php
+
+echo "common.php<br>";
 
 /**
  * PHPDoc
- * POST値の値を受け取りサニタイズ処理の結果を返す
+ * POSTの値を受け取りサニタイズ処理の結果を返す
+ * 
  * @param string
- * @return array
+ * @return array 
  */
-
   function h ($before) {
     foreach($before as $key => $value) {
       $after[$key] = htmlspecialchars($value,ENT_QUOTES,'UTF-8');
@@ -17,36 +17,33 @@
   }
 
 /**
- * ユーザー名バリデーション関数
- */
-
-  function preg_str($str_int) {
-    if($str_int == 1) { //遷移先の実引数参照
-      $str = "ユーザー名は5文字以上";
-      header('Location:../../ec_site/user.php?error='.$str.'');
-      exit();
-    }
-    if($str_int == 2) { //遷移先の実引数参照
-      $str = "ユーザー名は半角英数字";
-      header('Location:../../ec_site/user.php?error='.$str.'');
-      exit();
-    }
-  }
+ * 日付使い回し関数
+ * 返り値：本日の日付
+*/
+function today() {
+  $today = date("Ymd"); 
+  return $today;
+}
 
 /**
- * パスワードバリデーション関数
- */
-  function preg_pass($pass_int) {
-    if($pass_int == 1) {
-      $str = "8文字以上で入力して";
-      header('Location:../../ec_site/user.php?error='.$str.'');
-      exit();
-    }
-    if($pass_int == 2) {
-      $str = "半角英数で頼むは";
-      header('Location:../../ec_site/user.php?error='.$str.'');
-      exit();
-    }
+ * 配列の合計数（金額）を計算すru
+ * @param int $x 左辺
+ * @param int $y 右辺
+ * @param array $detect配列のkey
+ * @return int $sum $xと$y+繰り返しの合計値
+*/
+
+function price_sum($x,$y,$arr_sum) {
+  foreach($arr_sum as $val) {
+    $cal[] = $x[$val] * $y[$val];
+    var_dump($cal);
+    print '<br>';
   }
+  $sum = array_sum($cal);
+  return $sum;
+}
+//使用例
+// $val = price_sum($price,$product_qty,$detect);
+// var_dump($val);
 
 ?>
