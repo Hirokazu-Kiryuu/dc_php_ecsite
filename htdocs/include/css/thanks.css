@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 0 auto 1% auto;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  line-height: 150px;
+  border: 1px gray solid;
+}
+
+.left {
+  display: flex;
+}
+
+.right {
+  min-width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sum {
+  font-weight: bold;
+}

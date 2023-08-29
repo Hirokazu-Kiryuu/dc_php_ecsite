@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: red; */
+}
+
+header {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 50px;
+  background-color: #749bf2;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin-left: 3%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+header .side {
+  margin-right: 3%;
+  display: flex;
+  align-items: center;
+}
+
+header .side a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* header .side form input {
+  cursor: pointer;
+  border: none;
+  background-color: #749bf2;
+  color: #fff;
+  font-size: 16px;
+} */
+
+header form input {
+  cursor: pointer;
+  border: none;
+  background-color: #749bf2;
+  color: #fff;
+  font-size: 16px;
+}

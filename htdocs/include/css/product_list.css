@@ -1,0 +1,37 @@
+/* body {
+  background-color: red;
+} */
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  border: 1px solid #000;
+  margin: 0.5%;
+}
+
+.content .inner {
+  width: 200px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: red;
+}
