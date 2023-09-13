@@ -71,11 +71,19 @@ if(isset($_POST['buy_btn'])) {
       var_dump($rec['stock_qty']);
       print '<br>';
 
-##在庫切れ精査
-    if($rec['stock_qty'] <= 0) {
+##在庫切れ（計算式）
+      $cal = $rec['stock_qty'] - $rec['product_qty'];
+      var_dump($cal);
+      print '<br>';
+##在庫切れ(精査)
+      if($cal < 0) {
+##在庫切れの商品名配列格納
         $sold_name[] = $rec['product_name'];
         var_dump($sold_name);
         print '<br>';
+      } else {
+##UPDATEフラグ
+        $stock_flg = TRUE;
       }
     }
 
@@ -89,26 +97,28 @@ if(isset($_POST['buy_btn'])) {
       throw new Exception('申し訳ございません。'.$sold_out.'の在庫がなくなりました');
     }
 
-    foreach($stock_qty as $key => $val) {
-##$result[] = 在庫数($val) - 購入数($pro_qty[$key])
-      $result[] = $val - $product_qty[$key];//keyで番号取得
-      var_dump($result[$key]);
-      print '<br>';
-      $id[] = $product_id[$key];
-##UPDATE文
-      $update = 'UPDATE ec_stock SET stock_qty = ? WHERE product_id = ?';
+    if($stock_flg === TRUE) {
+      foreach($stock_qty as $key => $val) {
+  ##$result[] = 在庫数($val) - 購入数($pro_qty[$key])
+        $result[] = $val - $product_qty[$key];//keyで番号取得
+        // var_dump($result[$key]);
+        // print '<br>';
+        $id[] = $product_id[$key];
+  ##UPDATE文
+        $update = 'UPDATE ec_stock SET stock_qty = ? WHERE product_id = ?';
 
-      $stmt = $dbh->prepare($update);
-      
-      $stmt->bindValue(1,$result[$key]);
-      $stmt->bindValue(2,$id[$key]);
+        $stmt = $dbh->prepare($update);
+        
+        $stmt->bindValue(1,$result[$key]);
+        $stmt->bindValue(2,$id[$key]);
 
-      $stmt->execute();
+        $stmt->execute();
+    }
   }
 
       $dbh->commit();
       $result = '購入が完了しました、ありがとうございました!';
-      echo $result.'<br>';
+      // echo $result.'<br>';
       header('Location:../../ec_site/thanks.php?thanks='.$result.'');
       exit();
 

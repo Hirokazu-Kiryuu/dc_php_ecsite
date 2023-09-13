@@ -72,7 +72,7 @@ if($image['size'] === 0) {
   exit();
 } else {
   $ext = strtolower(pathinfo($image['name'],PATHINFO_EXTENSION));
-  $rest = array('jpeg','png');//後でjpg消す（要件には無い）
+  $rest = array('jpeg','jpg','png');//後でjpg消す（要件には無い）
   var_dump($ext);
   print '<br>';
 ##このタイミングでmove_up_load発動

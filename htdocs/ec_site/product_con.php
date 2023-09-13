@@ -77,15 +77,15 @@ print '<br>';
   <form action="../include/model/con_register.php" method="POST" enctype="multipart/form-data">
     <div class="product_info">
       <label for="pro_name">商品名:</label>
-      <input type="text" name="pro_name"><br/>
-      <label for="pro_name">価格:</label>
-      <input type="text" name="price"><br/>
+      <input type="text" name="pro_name" id="pro_name"><br/>
+      <label for="price">価格:</label>
+      <input type="text" name="price" id="price"><br/>
       <label for="stock_qty">個数:</label>
-      <input type="text" name="stock_qty"><br/>
+      <input type="text" name="stock_qty" id="stock_qty"><br/>
       <label for="image">商品画像:</label>
-      <input type="file" name="image"><br/>
+      <input type="file" name="image" id="image"><br/>
       <label for="public_flg">ステータス:</label>
-      <select name="public_flg">
+      <select name="public_flg" id="public_flg">
         <option value="1">公開</option>
         <option value="2">非公開</option>
       </select><br/>
