@@ -15,7 +15,7 @@ function dbConnect() {
     $password = PASSWORD;
     $pdo = new PDO($dsn,$login_user,$password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo "接続成功<br>";
+    // echo "接続成功<br>";
   } catch (PDOException $e) {
     echo $e->getMessage();
     exit();
