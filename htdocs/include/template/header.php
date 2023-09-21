@@ -35,11 +35,6 @@
       <!-- <a href="../ec_site/product_list.php">商品一覧</a> -->
     <?php endif;?>
 
-      <!-- <form action="../include/model/logout.php" method="POST">
-        <input type="hidden" name="logout" value="logout">
-        <input type="submit" value="ログアウト">
-      </form> -->
-
     </div>
 
   </header>

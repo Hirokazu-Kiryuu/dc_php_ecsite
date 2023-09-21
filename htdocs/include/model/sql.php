@@ -2,7 +2,7 @@
 //定数
 // require_once '../config/const.php';//なんかエラる
 //DB
-require_once 'model.php';
+require_once 'db_connect.php';
 ?>
 
 <?php

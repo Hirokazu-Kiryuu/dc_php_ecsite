@@ -1,18 +1,18 @@
 <?php
-// session_start();//値として保持はしているので必要ない可能性高（様子見）
+session_start();
+var_dump($_SESSION);
+print '<br>';
 ?>
 
 <?php
-//定数
+##定数
 require_once '../config/const.php';
-//SESSION系関数関数
-require_once 'session.php';
-//DB接続
-require_once 'model.php';
-//SQL関数
-require_once 'sql.php';
-//汎用系関数
+##DB接続
+require_once 'db_connect.php';
+##汎用系関数
 require_once 'common.php';
+##DB系関数
+require_once 'sql.php';
 ?>
 
 <?php
@@ -59,25 +59,25 @@ require_once 'common.php';
 
 
 ##user_idのユーザーがDBに商品のproduct_idを持っているか？
-          if(!empty($db_product_id)) {
+      if(!empty($db_product_id)) {
 ##product_qtyのインクリメント処理
-            $product_qty += 1;
-            var_dump($product_qty);
-            print '<br>';
+        $product_qty += 1;
+        var_dump($product_qty);
+        print '<br>';
 ##++処理をproduct_idとuser_idを参照して更新
-            $update = 'UPDATE ec_cart SET product_qty = ? WHERE user_id = ? AND product_id =? ';
-            $stmt = $dbh->prepare($update);
-            $stmt->bindValue(1,$product_qty);
-            $stmt->bindValue(2,$user_id);
-            $stmt->bindValue(3,$db_product_id);
-            $stmt->execute();
-            $dbh->commit();
+        $update = 'UPDATE ec_cart SET product_qty = ? WHERE user_id = ? AND product_id =? ';
+        $stmt = $dbh->prepare($update);
+        $stmt->bindValue(1,$product_qty);
+        $stmt->bindValue(2,$user_id);
+        $stmt->bindValue(3,$db_product_id);
+        $stmt->execute();
+        $dbh->commit();
 
-            $result =  $product_name.'を1個カートに追加しました。現在'.$product_name.'は'.$product_qty.'個カートに入っています';
-            // echo $result.'<br>';
-            header('Location:../../ec_site/product_list.php?register='.$result.'');
-            exit();
-          }
+        $result =  $product_name.'を1個カートに追加しました。現在'.$product_name.'は'.$product_qty.'個カートに入っています';
+        // echo $result.'<br>';
+        header('Location:../../ec_site/product_list.php?register='.$result.'');
+        exit();
+      }
 
 ##ec_cart table INSERT構文
     $ec_cart = 'INSERT INTO ec_cart
@@ -107,4 +107,5 @@ require_once 'common.php';
       exit();
     }
   }
+
 ?>

@@ -10,7 +10,8 @@ echo "session.php<br>";
 function index_redirect($num) {
   if(empty($num)) {
     // echo "仮止めログインページへ遷移<br>";
-    // header('Location:../../0002/ec_site/index.php?');
+    // header('Location:../../ec_site/index.php');
+    header('Location:../ec_site/index.php');
     exit();
   }
 }
@@ -24,7 +25,7 @@ function index_redirect($num) {
 function list_redirect($num) {
   if($num > 1) {
     // echo "仮止め一覧ページへ遷移<br>";
-    // header('Location:../../0002/ec_site/product_list.php');
+    header('Location:../ec_site/product_list.php');
     exit();
   }
 }

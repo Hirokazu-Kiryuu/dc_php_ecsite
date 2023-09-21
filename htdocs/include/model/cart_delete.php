@@ -6,7 +6,7 @@ session_start();
 #定数
 require_once '../config/const.php';
 //DB接続
-require_once 'model.php';
+require_once 'db_connect.php';
 //SQL関数
 require_once 'sql.php';
 //汎用系関数

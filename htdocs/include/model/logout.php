@@ -3,13 +3,13 @@ session_start();
 ?>
 
 <?php
-#定数
+##定数
 require_once '../config/const.php';
-//DB接続
-require_once 'model.php';
-//SQL関数
+##DB接続
+require_once 'db_connect.php';
+##SQL関数
 require_once 'sql.php';
-//汎用系関数
+##汎用系関数
 require_once 'common.php';
 ?>
 

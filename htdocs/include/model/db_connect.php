@@ -24,5 +24,3 @@ function dbConnect() {
 }
 
 ?>
-
-model.php
